@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang = 'en' ng-app='ourApp'>
+
+    <head>
+        <meta charset="UTF-8">
+        <title> Lauren and Doug's Candidate Picker</title>
+        <link rel="stylesheet" href="../assets/CSS/style.css">
+    </head>
+
+    <body ng-controller = "MainController">
+
+        <h1>US Election: The Best Way Possible</h1>
+
+        <div class="button-container">
+            <button class="showMe-button" ng-click ="showme=true">Who are the Candidates?</button>
+        </div>
+
+        <div ng-show="showme">
+
+            <div class = "democrats">
+                <ul class = "democratCandidates">
+                   <li ng-repeat = "democrat in democrats">{{democrat.name}}</li>
+                </ul>
+            </div>
+
+            <div class = "republicans">
+                <ul class = "republicanCandidates">
+                    <li ng-repeat = "republican in republicans">{{republican.name}}</li>
+                </ul>
+            </div>
+
+
+
+            <div class="button-container">
+                <button class="winner-button" ng-click = "showWinner()">Who Will Win?</button>
+            </div>
+        </div>
+
+        <div  class = "winner">
+            <h1>{{winner}}</h1>
+        </div>
+
+
+        <script type="text/javascript" src="vendor/angular/angular.min.js"></script>
+        <script type="text/javascript" src="assets/scripts/app.min.js"></script>
+
+    </body>
+</html>
